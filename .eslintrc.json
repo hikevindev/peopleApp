@@ -12,8 +12,6 @@
     "eslint:recommended",
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
-    "airbnb",
-    "airbnb-typescript",
     "plugin:prettier/recommended"
   ],
   "env": {
@@ -32,6 +30,7 @@
   },
   "rules": {
     "react/prop-types": "off",
+    "linebreak-style": ["error", "unix"],
     "@typescript-eslint/explicit-module-boundary-types": "off"
   }
 }

@@ -3,6 +3,5 @@
   "singleQuote": true,
   "printWidth": 80,
   "tabWidth": 2,
-  "trailingComma": "es5",
-  "linebreak-style": ["error", "lf"]
+  "trailingComma": "es5"
 }

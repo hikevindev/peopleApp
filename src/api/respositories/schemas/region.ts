@@ -66,4 +66,5 @@ export const regionResponseSchema = z.object({
   meta: metaSchema,
 });
 
+export type countrySchema = z.infer<typeof countrySchema>;
 export type regionResponse = z.infer<typeof regionResponseSchema>;

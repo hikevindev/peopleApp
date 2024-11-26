@@ -1,20 +1,18 @@
 import React, { useEffect } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { RegionService } from './api/services/regionService';
-import { RegionRepository } from './api/respositories/regionRepository';
-import { CountryService } from './api/services/countryService';
-import { CountryRepo } from './api/respositories/countryRepository';
+import { useDispatch } from 'react-redux';
+import { fetchRegion } from './redux/slices/regionSlice';
+import { AppDispatch } from './redux/store';
+import { REGION_LIST, REGION_TYPE } from './api/config/region';
 
-const serviceCountry = new CountryService(new CountryRepo());
-const regionService = new RegionService(new RegionRepository());
 function App() {
+  const dispatch = useDispatch<AppDispatch>();
+
   useEffect(() => {
-    const handler = async () => {
-      const data = await regionService.getCountryByName('asia');
-      console.log(data);
-    };
-    handler();
+    REGION_LIST.forEach((region: REGION_TYPE) => {
+      dispatch(fetchRegion(region));
+    });
   }, []);
 
   return (
